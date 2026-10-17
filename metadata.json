@@ -1,0 +1,6 @@
+{
+  "name": "صيدلية د. مؤمن | Dr. Moamen Pharmacy",
+  "description": "صيدلية إلكترونية متكاملة لطلب الأدوية ومستحضرات العناية ورفع الروشتات الطبية مع توصيل سريع واستشارات صيدلانية معتمدة.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
