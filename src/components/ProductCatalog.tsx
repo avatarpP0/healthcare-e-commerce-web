@@ -13,6 +13,7 @@ interface ProductCatalogProps {
   cartItemsMap: Record<string, number>;
   searchQuery: string;
   onClearSearch: () => void;
+  onRequestMedicine?: () => void;
 }
 
 export const ProductCatalog: React.FC<ProductCatalogProps> = ({
@@ -24,6 +25,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   cartItemsMap,
   searchQuery,
   onClearSearch,
+  onRequestMedicine,
 }) => {
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>('all');
   const [prescriptionFilter, setPrescriptionFilter] = useState<'all' | 'otc' | 'rx'>('all');
@@ -111,8 +113,17 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             </p>
           </div>
 
-          {/* Quick Sort Dropdown & Mobile filter button */}
-          <div className="flex items-center gap-3">
+          {/* Quick Sort Dropdown, Request Medicine & Mobile filter button */}
+          <div className="flex items-center gap-2.5 flex-wrap">
+            {onRequestMedicine && (
+              <button
+                onClick={onRequestMedicine}
+                className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-200 rounded-xl text-xs font-bold transition-colors cursor-pointer shadow-2xs"
+              >
+                <span>طلب دواء غير متوفر</span>
+              </button>
+            )}
+
             <button
               onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
               className="lg:hidden flex items-center gap-2 px-3.5 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 shadow-xs cursor-pointer"
@@ -419,13 +430,21 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                 <p className="text-xs text-slate-500 max-w-md mx-auto mb-5">
                   جرب تغيير كلمات البحث أو إعادة ضبط خيارات التصفية، أو ارفع الروشتة وسنقوم بتوفير الدواء لك مباشرة.
                 </p>
-                <div className="flex justify-center gap-3">
+                <div className="flex flex-wrap justify-center gap-3">
                   <button
                     onClick={resetFilters}
                     className="px-4 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors cursor-pointer"
                   >
                     إعادة ضبط الفلاتر
                   </button>
+                  {onRequestMedicine && (
+                    <button
+                      onClick={onRequestMedicine}
+                      className="px-4 py-2 text-xs font-bold text-white bg-sky-600 hover:bg-sky-700 rounded-xl transition-colors cursor-pointer shadow-xs"
+                    >
+                      طلب توفير هذا الصنف خصيصاً
+                    </button>
+                  )}
                 </div>
               </div>
             )}

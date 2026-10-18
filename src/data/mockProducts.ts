@@ -1,9 +1,13 @@
 import { Product } from '../types';
+import heroImg from '../assets/images/hero_pharmacy_consultation_1792273465151.jpg';
+import skincareImg from '../assets/images/product_skincare_dermatology_1792273466256.jpg';
+import vitaminsImg from '../assets/images/product_multivitamin_wellness_1792273467198.jpg';
+import bpDeviceImg from '../assets/images/product_medical_device_bp_1792273466645.jpg';
 
-export const HERO_IMAGE = '/src/assets/images/hero_pharmacy_consultation_1792273465151.jpg';
-export const SKINCARE_IMAGE = '/src/assets/images/product_skincare_dermatology_1792273466256.jpg';
-export const VITAMINS_IMAGE = '/src/assets/images/product_multivitamin_wellness_1792273467198.jpg';
-export const BP_DEVICE_IMAGE = '/src/assets/images/product_medical_device_bp_1792273466645.jpg';
+export const HERO_IMAGE = heroImg;
+export const SKINCARE_IMAGE = skincareImg;
+export const VITAMINS_IMAGE = vitaminsImg;
+export const BP_DEVICE_IMAGE = bpDeviceImg;
 
 export const INITIAL_PRODUCTS: Product[] = [
   // 1. Skincare (featured with real generated photography)

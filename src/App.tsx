@@ -12,6 +12,7 @@ import { CheckoutModal } from './components/CheckoutModal';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { PharmacistConsultationModal } from './components/PharmacistConsultationModal';
 import { UserAccountModal } from './components/UserAccountModal';
+import { RequestMedicineModal } from './components/RequestMedicineModal';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { Footer } from './components/Footer';
 
@@ -32,6 +33,7 @@ export default function App() {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [consultationTopic, setConsultationTopic] = useState('');
   const [isAccountOpen, setIsAccountOpen] = useState(false);
+  const [isRequestMedicineOpen, setIsRequestMedicineOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   // User History
@@ -175,6 +177,7 @@ export default function App() {
           cartItemsMap={cartItemsMap}
           searchQuery={searchQuery}
           onClearSearch={() => setSearchQuery('')}
+          onRequestMedicine={() => setIsRequestMedicineOpen(true)}
         />
 
         {/* 6. Prescription Upload Module (قسم رفع الروشتة) */}
@@ -244,6 +247,12 @@ export default function App() {
         onClose={() => setIsAccountOpen(false)}
         recentPrescriptions={recentPrescriptions}
         recentOrders={recentOrders}
+      />
+
+      {/* Special Request for Unavailable Medicine Modal */}
+      <RequestMedicineModal
+        isOpen={isRequestMedicineOpen}
+        onClose={() => setIsRequestMedicineOpen(false)}
       />
 
       {/* Floating 24/7 WhatsApp & Hotline Contact Button */}
