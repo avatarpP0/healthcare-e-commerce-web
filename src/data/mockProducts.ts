@@ -305,7 +305,9 @@ export const PHARMACY_INFO = {
   leadPharmacist: 'د. مؤمن السعيد (ماجستير الصيدلة الإكلينيكية)',
   licenseNumber: 'ترخيص وزارة الصحة رقم: 8492/2014',
   phone: '19820',
-  whatsapp: '+20 100 234 5678',
+  whatsapp: '01149556339',
+  whatsappDisplay: '+20 114 955 6339',
+  whatsappRaw: '201149556339',
   address: 'ميدان المساحة - الدقي - الجيزة',
   branches: [
     { name: 'فرع الدقي (الرئيسي)', address: '14 شارع المساحة، أمام البنك الأهلي', hours: 'خدمة 24 ساعة يومياً' },

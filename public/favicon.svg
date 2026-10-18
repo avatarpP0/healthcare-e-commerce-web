@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <linearGradient id="pharmacyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+    <linearGradient id="crossGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0284c7" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Background Shield/Rounded Hexagon -->
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#pharmacyGradient)" filter="url(#shadow)" />
+  
+  <!-- Subtle Inner Border -->
+  <rect x="5.5" y="5.5" width="53" height="53" rx="14.5" stroke="#ffffff" stroke-opacity="0.3" stroke-width="1.5" />
+
+  <!-- Pharmacy Cross (Green & White Accents) -->
+  <rect x="26" y="16" width="12" height="32" rx="4" fill="#ffffff" />
+  <rect x="16" y="26" width="32" height="12" rx="4" fill="#ffffff" />
+  
+  <!-- Center Heart & Pulse Line in Emerald -->
+  <circle cx="32" cy="32" r="5" fill="url(#crossGradient)" />
+  <path d="M22 32h5l2-4 3 8 3-6 2 2h7" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

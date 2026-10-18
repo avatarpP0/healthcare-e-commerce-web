@@ -20,10 +20,15 @@ export const TopUtilityBar: React.FC<TopUtilityBarProps> = ({ onOpenConsultation
 
           <span className="hidden sm:inline text-slate-700">|</span>
 
-          <div className="hidden sm:flex items-center gap-1.5 text-slate-300">
-            <Clock className="w-3.5 h-3.5 text-emerald-400" />
-            <span>{PHARMACY_INFO.workingHours}</span>
-          </div>
+          <a
+            href="https://wa.me/201149556339"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
+          >
+            <span>واتساب:</span>
+            <span className="font-mono font-bold tracking-wider text-emerald-400">01149556339</span>
+          </a>
 
           <span className="hidden md:inline text-slate-700">|</span>
 
@@ -33,14 +38,18 @@ export const TopUtilityBar: React.FC<TopUtilityBarProps> = ({ onOpenConsultation
           </div>
         </div>
 
-        {/* Free shipping & Quick Pharmacist Chat */}
-        <div className="flex items-center gap-4 me-auto sm:me-0">
+        {/* Free shipping & Quick Pharmacist Chat & Developer Credit */}
+        <div className="flex items-center gap-3 sm:gap-4 me-auto sm:me-0 flex-wrap">
+          <div className="hidden lg:flex items-center gap-1.5 text-sky-300 bg-sky-950/70 border border-sky-800/80 px-2.5 py-0.5 rounded-lg font-medium text-[11px]">
+            <span>صنع بواسطة المبرمج محمد تامر</span>
+          </div>
+
           <div className="flex items-center gap-1.5 text-emerald-400">
             <Truck className="w-3.5 h-3.5" />
             <span>شحن مجاني للطلبات فوق {PHARMACY_INFO.freeDeliveryThreshold} ج.م</span>
           </div>
 
-          <span className="text-slate-700">|</span>
+          <span className="text-slate-700 hidden sm:inline">|</span>
 
           <button
             onClick={onOpenConsultation}

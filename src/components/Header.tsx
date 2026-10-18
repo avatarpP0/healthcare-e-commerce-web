@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Search, ShoppingBag, User, FileText, X, Plus, Sparkles, ChevronDown } from 'lucide-react';
 import { Product } from '../types';
+import { PharmacyLogo } from './PharmacyLogo';
 
 interface HeaderProps {
   cartCount: number;
@@ -65,32 +66,25 @@ export const Header: React.FC<HeaderProps> = ({
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-200">
+    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-200 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Header Bar */}
         <div className="flex items-center justify-between gap-4 md:gap-8 h-20">
-          {/* Zone 1: Single element Brand wordmark with medical emblem */}
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              onSelectCategory('all');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            className="flex items-center gap-3 text-slate-900 whitespace-nowrap shrink-0 group"
-          >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 to-sky-500 flex items-center justify-center text-white shadow-md shadow-sky-500/20 group-hover:scale-105 transition-transform">
-              <span className="font-bold text-xl leading-none">م</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-tight text-slate-900 group-hover:text-sky-600 transition-colors">
-                صيدلية د. مؤمن
-              </span>
-              <span className="text-[11px] text-slate-500 font-medium tracking-wide">
-                DR. MOAMEN PHARMACY
-              </span>
-            </div>
-          </a>
+          {/* Zone 1: Brand logo wordmark with SVG emblem and developer tag */}
+          <div className="flex items-center gap-3">
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectCategory('all');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="whitespace-nowrap shrink-0"
+              aria-label="الرئيسية - صيدلية د. مؤمن"
+            >
+              <PharmacyLogo size="md" />
+            </a>
+          </div>
 
           {/* Central High-Visibility Search Bar */}
           <div ref={searchContainerRef} className="flex-1 max-w-xl relative hidden md:block">
@@ -262,8 +256,12 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
             );
           })}
-          <div className="ms-auto flex items-center gap-4 text-xs text-slate-500 shrink-0 ps-3">
-            <span className="hidden md:inline">استشارة مجانية مع الصيدلي طوال اليوم</span>
+          <div className="ms-auto flex items-center gap-3 text-xs text-slate-500 shrink-0 ps-3">
+            <span className="hidden md:inline text-slate-400">استشارة مجانية طوال اليوم</span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-sky-50 text-sky-800 font-bold text-[11px] border border-sky-200/80 shadow-2xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-600 inline-block" />
+              صنع بواسطة المبرمج محمد تامر
+            </span>
           </div>
         </nav>
       </div>

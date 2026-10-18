@@ -12,6 +12,7 @@ import { CheckoutModal } from './components/CheckoutModal';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { PharmacistConsultationModal } from './components/PharmacistConsultationModal';
 import { UserAccountModal } from './components/UserAccountModal';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -244,6 +245,9 @@ export default function App() {
         recentPrescriptions={recentPrescriptions}
         recentOrders={recentOrders}
       />
+
+      {/* Floating 24/7 WhatsApp & Hotline Contact Button */}
+      <FloatingWhatsApp />
     </div>
   );
 }

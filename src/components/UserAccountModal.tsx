@@ -170,12 +170,12 @@ export const UserAccountModal: React.FC<UserAccountModalProps> = ({
                     </div>
 
                     <a
-                      href={`https://wa.me/201002345678?text=استفسار%20عن%20الروشتة%20${sub.ticketNumber}`}
+                      href={`https://wa.me/201149556339?text=استفسار%20عن%20الروشتة%20${sub.ticketNumber}`}
                       target="_blank"
                       rel="noreferrer"
                       className="text-xs text-sky-600 hover:text-sky-700 font-bold p-2 cursor-pointer"
                     >
-                      متابعة
+                      متابعة (01149556339)
                     </a>
                   </div>
                 ))

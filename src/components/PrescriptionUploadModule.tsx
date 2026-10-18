@@ -234,13 +234,13 @@ export const PrescriptionUploadModule: React.FC<PrescriptionUploadModuleProps> =
               </button>
 
               <a
-                href={`https://wa.me/201002345678?text=مرحباً%20صيدلية%20د.%20مؤمن،%20أستفسر%20عن%20الروشتة%20رقم%20${submittedData.ticketNumber}`}
+                href={`https://wa.me/201149556339?text=مرحباً%20صيدلية%20د.%20مؤمن،%20أستفسر%20عن%20الروشتة%20رقم%20${submittedData.ticketNumber}`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs rounded-xl shadow-xs transition-colors"
               >
                 <PhoneCall className="w-3.5 h-3.5" />
-                <span>متابعة الروشتة عبر الواتساب فوراً</span>
+                <span>متابعة الروشتة عبر الواتساب فوراً (01149556339)</span>
               </a>
             </div>
           </div>

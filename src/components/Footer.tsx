@@ -1,6 +1,7 @@
 import React from 'react';
-import { Phone, Clock, MapPin, ShieldCheck, Mail, ArrowUp } from 'lucide-react';
+import { Phone, Clock, MapPin, ShieldCheck, Mail, ArrowUp, Code2, Sparkles, Heart } from 'lucide-react';
 import { PHARMACY_INFO } from '../data/mockProducts';
+import { PharmacyLogo } from './PharmacyLogo';
 
 interface FooterProps {
   onScrollToTop: () => void;
@@ -17,18 +18,10 @@ export const Footer: React.FC<FooterProps> = ({
     <footer className="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-slate-800">
           {/* Pharmacy Profile */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-sky-500 flex items-center justify-center text-white font-bold text-xl shadow-md">
-                م
-              </div>
-              <div>
-                <span className="text-xl font-bold text-white block">صيدلية د. مؤمن</span>
-                <span className="text-xs text-sky-400 font-mono">DR. MOAMEN PHARMACY</span>
-              </div>
-            </div>
+            <PharmacyLogo size="md" lightText={true} />
 
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
               صيدلية رائدة تقدم خدمات الرعاية الصيدلانية الشاملة، صرف الأدوية وتوفير النواقص، تجهيز الروشتات الطبية وتوصيلها بأعلى معايير الجودة والسلامة الصحية.
@@ -46,6 +39,17 @@ export const Footer: React.FC<FooterProps> = ({
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>الخط الساخن: <strong className="text-white font-mono">{PHARMACY_INFO.phone}</strong></span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-4 h-4 text-emerald-400 flex items-center justify-center font-bold text-xs">💬</span>
+                <a
+                  href="https://wa.me/201149556339"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-emerald-400 transition-colors"
+                >
+                  واتساب الصيدلية المباشر: <strong className="text-emerald-400 font-mono">01149556339</strong>
+                </a>
               </div>
             </div>
           </div>
@@ -117,12 +121,40 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} صيدلية د. مؤمن. جميع الحقوق محفوظة لجمهورية مصر العربية.</p>
+        {/* Developer Attribution Card */}
+        <div className="my-8 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-800 via-slate-800/90 to-sky-950/40 border border-slate-700/80 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center border border-sky-500/20 shrink-0">
+              <Code2 className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-sm sm:text-base font-bold text-white">
+                  صنع وتطوير بواسطة المبرمج محمد تامر
+                </span>
+                <span className="text-[11px] bg-sky-500/20 text-sky-300 border border-sky-500/30 px-2 py-0.5 rounded-md font-mono">
+                  Full-Stack
+                </span>
+              </div>
+              <p className="text-xs text-slate-400 mt-0.5">
+                تطوير وتصميم وبرمجة منصات الرعاية الصحية والتجارة الإلكترونية الصيدلانية
+              </p>
+            </div>
+          </div>
 
-          <div className="flex items-center gap-4">
-            <span>طرق الدفع المعتمدة: كاش عند الاستلام · فيزا · ماستركارد · ميزة · فودافون كاش · إنستاباي</span>
+          <div className="flex items-center gap-2 shrink-0">
+            <span className="text-xs text-slate-300 font-mono bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700">
+              صنع بواسطة المبرمج محمد تامر
+            </span>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>© {new Date().getFullYear()} صيدلية د. مؤمن · صنع بواسطة المبرمج محمد تامر · جميع الحقوق محفوظة.</p>
+
+          <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-end">
+            <span>طرق الدفع: كاش عند الاستلام · فيزا · ميزة · فودافون كاش · إنستاباي</span>
             <button
               onClick={onScrollToTop}
               className="p-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-colors cursor-pointer flex items-center gap-1 text-[11px]"

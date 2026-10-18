@@ -85,13 +85,13 @@ export const PharmacistConsultationModal: React.FC<PharmacistConsultationModalPr
 
             <div className="pt-3 flex flex-col gap-2">
               <a
-                href={`https://wa.me/201002345678?text=مرحباً%20صيدلية%20د.%20مؤمن،%20لدي%20استشارة%20طبية%20عاجلة`}
+                href={`https://wa.me/201149556339?text=مرحباً%20صيدلية%20د.%20مؤمن،%20لدي%20استشارة%20طبية%20عاجلة`}
                 target="_blank"
                 rel="noreferrer"
                 className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-xs flex items-center justify-center gap-2 transition-colors"
               >
                 <PhoneCall className="w-4 h-4" />
-                <span>محادثة واتساب مباشرة الآن</span>
+                <span>محادثة واتساب مباشرة الآن (01149556339)</span>
               </a>
 
               <button
